@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/languageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Language"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"/>
+
+    <Spinner
+        android:id="@+id/languageSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        app:layout_constraintTop_toBottomOf="@id/languageLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addContactCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/languageSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/addContactLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Emergency Contact"
+                android:textColor="#D32F2F"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                app:layout_constraintTop_toBottomOf="@id/addContactLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="12dp"/>
+
+            <Spinner
+                android:id="@+id/countryCodeSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:minHeight="48dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/editTextNumber"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:textColor="#000000"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:minHeight="48dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                app:layout_constraintEnd_toStartOf="@id/buttonAdd"
+                app:layout_constraintStart_toEndOf="@id/countryCodeSpinner"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:backgroundTint="#D32F2F"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/editTextNumber"
+                android:layout_marginBottom="12dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/contactsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Contacts"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/addContactCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNumbers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/contactsLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="4dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

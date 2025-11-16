@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Settings"
+        android:src="@android:drawable/ic_menu_preferences"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/settingsButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="24dp"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BeSafe in Everywhere..."
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/panicButton"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:text="Help"
+                android:backgroundTint="#D32F2F"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@id/appTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:id="@+id/micButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:background="@android:color/transparent"
+                android:contentDescription="Voice Panic"
+                app:layout_constraintTop_toBottomOf="@id/panicButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Press the button in an emergency."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/micButton" />
+
+            <Button
+                android:id="@+id/recordingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recordings"
+                app:layout_constraintTop_toBottomOf="@id/statusText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

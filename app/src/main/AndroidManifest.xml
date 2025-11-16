@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mypanicapp"> <!-- Ensure this matches your project's package name -->
+
+    <!-- Permissions for sending SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <!-- Permissions for getting location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- For Google Play Services and general network access -->
+
+    <!-- Permissions for audio recording -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- WRITE_EXTERNAL_STORAGE is needed for older Android versions (API < 29) to save to public storage.
+         For Android 10+ (API 29+), MediaStore API handles this without needing this permission. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+
+    <!-- Permissions for video recording (CameraX) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Declare camera feature. If your app *can* function without a camera, set android:required="false" -->
+    <uses-feature android:name="android.hardware.camera.any" android:required="true" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyPanicApp"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SettingsActivity" />
+
+        <activity android:name=".RecordingsActivity" />
+
+        <!-- If you need a PreviewView for CameraX, even if invisible, it might be declared in layout XML -->
+        <!-- No additional manifest entries are typically needed for CameraX itself,
+             as long as permissions are declared and dependencies are set in build.gradle. -->
+
+    </application>
+
+</manifest>
